@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash Flow.</title>
+    <link rel="icon" href="Wallet (Colour).png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e6e6fa;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #d8bfd8;
+            font-size: 2.5em;
+        }
+
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        hr {
+            border: 1px solid #333;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #282828;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #333;
+            color: #e6e6fa;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        input[type="radio"] + label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 30px auto;
+            color: #e6e6fa;
+            background-color: #282828;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        tbody tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        tbody button {
+            background-color: #d32f2f;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        tbody button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="Wallet (Colour).png" alt="Cash Flow." title="Money Doesn't Grow On Trees." width="50">&nbsp;Cash Flow.</h1>
+    <hr>
+    <p><strong>Keep Your Expenditure In Check.</strong></p>
+    <form id="cashFlowForm">
+        <section class="form-row">
+            <label for="DateOfExpense">Date :</label>
+            <input id="DateOfExpense" type="date" name="DateOfExpense" required/>
+        </section>
+        <section class="form-row">
+            <label for="TimeOfExpense">Time :</label>
+            <input id="TimeOfExpense" type="time" name="TimeOfExpense" required/>
+        </section>
+        <section class="form-row">
+            <label for="Category">Category :</label>
+            <select id="Category" name="Category">
+                <option value="Food">Food</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Salary">Salary</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Other">Other</option>
+            </select>
+        </section>
+        <section class="form-row">
+            <label>Type:</label>
+            <section>
+                <input type="radio" id="expense" name="type" value="expense" checked>
+                <label for="expense">Expense</label>
+                <input type="radio" id="income" name="type" value="income">
+                <label for="income">Income</label>
+            </section>
+        </section>
+        <section class="form-row">
+            <label for="Expense_Income">Amount : ₹</label>
+            <input id="Expense_Income" type="number" name="Expense_Income" required min="0"/>
+        </section>
+        <p>
+            <button type="button" onclick="addEntry()">Add Entry</button>
+            <button type="reset">Clear</button>
+        </p>
+    </form>
+    <table id="cashFlowTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Category</th>
+                <th>Expense/Income</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        // JavaScript code remains the same
+    </script>
+</body>
+</html>
